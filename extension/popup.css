@@ -1,0 +1,162 @@
+:root {
+  color-scheme: light;
+  --bg: #f4efe7;
+  --panel: #fffdfa;
+  --text: #1b1815;
+  --muted: #6b635b;
+  --accent: #ca5b31;
+  --accent-strong: #8f3418;
+  --border: #e8ddcf;
+  --shadow: rgba(80, 48, 22, 0.12);
+  --success: #1f8f57;
+  --success-bg: #e9f8ef;
+}
+
+body {
+  margin: 0;
+  min-width: 380px;
+  max-width: 420px;
+  background:
+    radial-gradient(circle at top left, rgba(226, 158, 107, 0.25), transparent 35%),
+    radial-gradient(circle at top right, rgba(150, 74, 42, 0.12), transparent 30%),
+    linear-gradient(180deg, #fff7ee 0%, var(--bg) 100%);
+  color: var(--text);
+  font: 14px/1.5 "Segoe UI", sans-serif;
+}
+
+.popup {
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.hero {
+  padding: 6px 2px 2px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-copy,
+.meta,
+.status {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.meta.compact {
+  margin-top: 10px;
+}
+
+.card {
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(255, 253, 248, 0.9);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.card-head h2 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.badge-muted {
+  background: #f1e8dc;
+  color: #7a6955;
+}
+
+.badge-success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.field {
+  display: block;
+}
+
+.field + .field {
+  margin-top: 12px;
+}
+
+.field span {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(143, 52, 24, 0.22);
+}
+
+button.secondary {
+  background: #efe2d2;
+  color: var(--accent-strong);
+  box-shadow: none;
+}
+
+.actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.result-card .field + .field {
+  margin-top: 14px;
+}

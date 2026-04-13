@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coding Platform Study Solver</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="popup">
+    <section class="hero">
+      <p class="eyebrow">Popup-Only Assistant</p>
+      <h1>Platform Solver</h1>
+      <p class="hero-copy">Read the current coding problem, send it to your local backend, and keep the site page itself untouched.</p>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Connection</h2>
+        <span id="backendBadge" class="badge badge-muted">Unchecked</span>
+      </div>
+      <label class="field">
+        <span>Backend URL</span>
+        <input id="backendUrl" type="text" value="http://127.0.0.1:8765">
+      </label>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>AI Provider</h2>
+      </div>
+      <label class="field">
+        <span>Quick Setup</span>
+        <select id="providerPreset">
+          <option value="openai">OpenAI API</option>
+          <option value="ollama">Ollama Local (Free)</option>
+          <option value="rule_based">Local Fallback</option>
+        </select>
+      </label>
+      <p id="presetHelp" class="meta compact">
+        OpenAI-compatible `responses` and `chat/completions` URLs are supported.
+      </p>
+      <label class="field">
+        <span>Provider</span>
+        <select id="providerName">
+          <option value="openai">OpenAI Compatible</option>
+          <option value="rule_based">Local Fallback</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Model</span>
+        <input id="modelName" type="text" value="gpt-4.1-mini" placeholder="gpt-4.1-mini">
+      </label>
+      <label class="field">
+        <span>API Key</span>
+        <input id="apiKey" type="password" value="" placeholder="sk-...">
+      </label>
+      <label class="field">
+        <span>API URL</span>
+        <input id="apiUrl" type="text" value="https://api.openai.com/v1/responses">
+      </label>
+      <button id="saveButton" type="button">Save Settings</button>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Current Tab</h2>
+        <span id="pageBadge" class="badge badge-muted">Unknown</span>
+      </div>
+      <p id="problemMeta" class="meta">Open a supported problem page, then click solve.</p>
+      <div class="actions">
+        <button id="solveButton" type="button">Solve Current Page</button>
+        <button id="copyCodeButton" type="button" class="secondary">Copy Code</button>
+        <button id="copyExplanationButton" type="button" class="secondary">Copy Notes</button>
+      </div>
+    </section>
+
+    <section class="card result-card">
+      <div class="card-head">
+        <h2>Result</h2>
+        <span id="providerBadge" class="badge badge-muted">None</span>
+      </div>
+      <p id="resultSummary" class="meta">No solution generated yet.</p>
+      <label class="field">
+        <span>Code</span>
+        <textarea id="codeOutput" rows="12" spellcheck="false" readonly placeholder="Generated code will appear here"></textarea>
+      </label>
+      <label class="field">
+        <span>Notes</span>
+        <textarea id="notesOutput" rows="8" spellcheck="false" readonly placeholder="Analysis and complexity notes will appear here"></textarea>
+      </label>
+    </section>
+
+    <p id="statusText" class="status">Waiting for action</p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

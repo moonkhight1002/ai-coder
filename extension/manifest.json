@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Coding Platform Study Copilot",
+  "version": "0.1.0",
+  "description": "Local study assistant for supported coding platform problem pages.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://www.hackerrank.com/*",
+    "https://www.codechef.com/*",
+    "https://codeforces.com/*",
+    "https://atcoder.jp/*",
+    "http://127.0.0.1/*",
+    "http://localhost/*"
+  ],
+  "action": {
+    "default_title": "Coding Platform Study Copilot",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/problems/*",
+        "https://www.hackerrank.com/challenges/*",
+        "https://www.hackerrank.com/contests/*/challenges/*",
+        "https://www.codechef.com/problems/*",
+        "https://codeforces.com/problemset/problem/*/*",
+        "https://codeforces.com/contest/*/problem/*",
+        "https://atcoder.jp/contests/*/tasks/*"
+      ],
+      "js": ["platforms.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+:root {
+  --leetbot-bg: rgba(18, 18, 17, 0.92);
+  --leetbot-panel: rgba(33, 26, 20, 0.96);
+  --leetbot-card: rgba(255, 248, 241, 0.06);
+  --leetbot-text: #f6efe3;
+  --leetbot-muted: #d2c4af;
+  --leetbot-accent: #eb6c39;
+  --leetbot-accent-soft: rgba(235, 108, 57, 0.2);
+  --leetbot-border: rgba(255, 255, 255, 0.09);
+  --leetbot-success: #8fdfa8;
+  --leetbot-danger: #ff8d7a;
+}
+
+#leetbot-panel {
+  position: fixed;
+  top: 88px;
+  right: 24px;
+  z-index: 2147483647;
+  width: 350px;
+  background:
+    radial-gradient(circle at top right, rgba(235, 108, 57, 0.18), transparent 28%),
+    linear-gradient(180deg, rgba(57, 35, 21, 0.96), var(--leetbot-panel));
+  color: var(--leetbot-text);
+  border: 1px solid var(--leetbot-border);
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+  backdrop-filter: blur(14px);
+}
+
+#leetbot-panel.leetbot-hidden {
+  display: none;
+}
+
+.leetbot-header {
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--leetbot-border);
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.leetbot-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.leetbot-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.leetbot-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.leetbot-subtitle {
+  margin: 4px 0 0;
+  color: var(--leetbot-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.leetbot-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--leetbot-text);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.leetbot-icon-button {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--leetbot-text);
+  font: 700 16px/1 "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+
+#leetbot-panel.leetbot-dragging .leetbot-header {
+  cursor: grabbing;
+}
+
+.leetbot-body {
+  padding: 14px 16px 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.leetbot-card {
+  padding: 12px;
+  border-radius: 16px;
+  background: var(--leetbot-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.leetbot-card-title {
+  margin-bottom: 10px;
+  color: var(--leetbot-muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.leetbot-provider-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: var(--leetbot-muted);
+  font-size: 12px;
+}
+
+.leetbot-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.leetbot-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--leetbot-text);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.leetbot-button.primary {
+  background: linear-gradient(135deg, #df6a3a, #b14321);
+}
+
+.leetbot-button.danger {
+  background: rgba(255, 141, 122, 0.14);
+  color: #ffd0c8;
+}
+
+.leetbot-toggles {
+  display: grid;
+  gap: 10px;
+}
+
+.leetbot-toggle {
+  padding: 10px;
+  border-radius: 14px;
+  background: var(--leetbot-accent-soft);
+  border: 1px solid rgba(235, 108, 57, 0.18);
+  font-size: 12px;
+}
+
+.leetbot-toggle label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.leetbot-toggle span {
+  display: block;
+}
+
+.leetbot-toggle strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.leetbot-toggle small {
+  display: block;
+  color: var(--leetbot-muted);
+  line-height: 1.35;
+}
+
+.leetbot-status {
+  color: var(--leetbot-muted);
+  font-size: 12px;
+}
+
+.leetbot-status strong {
+  color: var(--leetbot-text);
+}
+
+.leetbot-log {
+  max-height: 220px;
+  overflow: auto;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 12px;
+  white-space: pre-wrap;
+  line-height: 1.45;
+}
+
+.leetbot-success {
+  color: var(--leetbot-success);
+}
+
+.leetbot-error {
+  color: var(--leetbot-danger);
+}

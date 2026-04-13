@@ -1,0 +1,22 @@
+[
+  {
+    "name": "example_case",
+    "input": "5\n1 2 3 4 5\n",
+    "expected": "15\n"
+  },
+  {
+    "name": "single_value",
+    "input": "1\n42\n",
+    "expected": "42\n"
+  },
+  {
+    "name": "negative_values",
+    "input": "4\n-5 10 -3 2\n",
+    "expected": "4\n"
+  },
+  {
+    "name": "zeros",
+    "input": "3\n0 0 0\n",
+    "expected": "0\n"
+  }
+]
